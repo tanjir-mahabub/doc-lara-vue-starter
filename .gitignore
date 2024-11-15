@@ -1,6 +1,5 @@
 # Ignore Docker container and volume data
 .docker/
-docker-compose.yml
 
 # Ignore environment files
 .env
