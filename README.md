@@ -22,16 +22,16 @@ Follow these steps to set up and run the project on your local machine:
 
 Clone the project repository to your local system:
 
-```bash
-  git clone https://github.com/your-username/your-repository-name.git
-  cd your-repository-name
+```
+git clone https://github.com/your-username/your-repository-name.git
+cd your-repository-name
 ```
 ## 2. Build and Start Docker Containers
 
 Run the following command from the **root of the project directory** to build and start all Docker containers:
 
-```bash
-  docker-compose up --build
+```
+docker-compose up --build
 ```
 This will:
 
@@ -45,70 +45,75 @@ This will:
 
 1. **Navigate to the backend directory**:
 
-```bash
-  cd backend
+```
+cd backend
 ```
 
 2. **Access the Laravel container**:
 
-```bash
-  docker exec -it laravel_app bash
+```
+docker exec -it laravel_app bash
 ```
 
 3. **Install Composer dependencies**:
 
-```bash  
-  composer install
+```
+composer install
 ```
 
 4. **Set up the .env file:**:
 
-```bash  
-  cp .env.example .env
+```
+cp .env.example .env
 ```
 
 5. **Generate the application key**:
 
-```bash
-  php artisan key:generate
+```
+php artisan key:generate
 ```
 
 6. **Run migrations to set up the database structure**:
 
-```bash
-  php artisan migrate
+```
+php artisan migrate
 ```
 
 7. Exit the Laravel container:
 
-```bash
-  exit
+```
+exit
 ```
 
 ## 4. Set Up Vue.js Frontend
 
 1. **Navigate to the frontend directory**:
 
-```bash
-  cd ../frontend
+```
+cd ../frontend
+```
+2. **Set up the .env file:**:
+
+```
+touch .env
 ```
 
-2. **Access the Vue.js container**:
+3. **Access the Vue.js container**:
 
-```bash
-  docker exec -it vue_app bash
+```
+docker exec -it vue_app bash
 ```
 
 3. **Install npm dependencies**:
 
-```bash
-  npm install
+```
+npm install
 ```
 
 4. **Exit the Vue.js container**:
 
-```bash
-  exit
+```
+exit
 ```
 
 ## 5. Update Environment Variables
@@ -117,19 +122,19 @@ Update the .env files in both backend and frontend folders with the necessary co
 #### Laravel .env file (backend)
 Open backend/.env and configure the database settings as follows:
 
-```bash
-  DB_CONNECTION=mysql
-  DB_HOST=mysql
-  DB_PORT=3306
-  DB_DATABASE=laravel_db
-  DB_USERNAME=custom_user
-  DB_PASSWORD=custom_password
+```
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=custom_user
+DB_PASSWORD=custom_password
 ```
 #### Vue .env file (frontend)
 Open frontend/.env and set the API endpoint:
 
-```bash
-  VITE_API_BASE_URL=http://127.0.0.1:8000/api
+```
+VITE_API_BASE_URL=http://127.0.0.1:8000/api
 ```
 ### 6. Access the Application
 Once the setup is complete, you can access the application in your browser:
@@ -142,13 +147,13 @@ Once the setup is complete, you can access the application in your browser:
 #### To Stop Docker Containers
 Run this command in the root of the project directory:
 
-```bash
-  docker-compose down
+```
+docker-compose down
 ```
 
 #### To View Logs
 Run this command in the root of the project directory:
 
-```bash
+```
 docker-compose logs
 ```
